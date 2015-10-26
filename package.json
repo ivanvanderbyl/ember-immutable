@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/ivanvanderbyl/ember-immutable",
   "dependencies": {
-    "broccoli-merge-trees": "^0.2.3",
-    "immutable": "ivanvanderbyl/immutable-js#master"
+    "broccoli-merge-trees": "^0.2.3"
   }
 }
