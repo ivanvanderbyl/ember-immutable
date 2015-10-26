@@ -2,32 +2,13 @@
 'use strict';
 
 var path = require('path');
-var mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'immutable',
 
-  included: function(app) {
-    this._super.included(app);
-
-    var packagePath = path.join(this.project.addonPackages[this.project.name].path, 'node_modules', 'immutable', 'dist', 'immutable.js');
-    app.import(packagePath, {
-      exports: {
-        'immutable': ['default']
-      }
-    });
+  treeForAddon: function() {
+    var immutablePath = path.join(this.project.addonPackages['ember-immutable'].path, 'node_modules', 'immutable', 'src');
+    var tree = this.treeGenerator(immutablePath);
+    return this._super.treeForAddon.call(this, tree);
   }
-
-  // treeForAddon: function() {
-  //   var inputNodes = [];
-  //   var packagePath = path.join(this.project.addonPackages[this.project.name].path, 'node_modules', 'immutable', 'dist', 'immutable.js');
-  //   inputNodes.push(this.treeGenerator(packagePath));
-
-  //   var trees = new mergeTrees(inputNodes, {
-  //     overwrite: true,
-  //     annotation: true,
-  //   });
-
-  //   return this._super.treeForAddon.call(this, trees);
-  // }
 };
