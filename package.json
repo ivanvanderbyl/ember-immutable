@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/ivanvanderbyl/ember-immutable",
   "dependencies": {
-    "ember-cli-babel": "^5.0.0",
-    "broccoli-merge-trees": "^0.2.3"
+    "broccoli-babel-transpiler": "^5.4.5",
+    "broccoli-merge-trees": "^0.2.3",
+    "ember-cli-babel": "^5.0.0"
   }
 }
